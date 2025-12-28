@@ -217,10 +217,15 @@ export const ChatInput = (props: ChatInputProps) => {
                     className='text-black dark:text-white px-6 py-5'
                     value={inputText}
                     onChangeText={setInputText}
+                    multiline
+                    numberOfLines={3}
                     style={{
-                        height: 60,
+                        height: inputHeight,
+                        minHeight: 56,
+                        maxHeight: MAX_INPUT_HEIGHT + 8,
                     }}
                     onContentSizeChange={handleContentSizeChange}
+                    scrollEnabled={inputHeight >= MAX_INPUT_HEIGHT}
                 />
                 <View className='flex-row bg-neutral-200/50 dark:bg-black/30 justify-between p-2 rounded-b-3xl'>
                     <View className='flex-row gap-x-2'>
